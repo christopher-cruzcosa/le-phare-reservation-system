@@ -1,0 +1,23 @@
+{
+  "name": "le-phare-restaurant-server",
+  "version": "1.0.0",
+  "description": "restaurant tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christopher-cruzcosa/le-phare-restaurant-server.git"
+  },
+  "author": "chris, garret, josh, gerardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christopher-cruzcosa/le-phare-restaurant-server/issues"
+  },
+  "homepage": "https://github.com/christopher-cruzcosa/le-phare-restaurant-server#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
