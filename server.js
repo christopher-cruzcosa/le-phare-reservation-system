@@ -79,20 +79,37 @@ app.get("/api/waitlist", (req, res) => {
 // });
 
 // Create New Characters - takes in JSON input
-// app.post("/api/characters", (req, res) => {
+app.post("/tables", (req, res) => {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
-  // const newCharacter = req.body;
+  const newTable = req.body;
 
   // Using a RegEx Pattern to remove spaces from newCharacter
 //   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
 //   newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
 
-//   console.log(newCharacter);
+  console.log(newTable);
 
-//   characters.push(newCharacter);
+  if (tables.length > 5) {
+    waitList.push(newTable);
+  } else
+  {tables.push(newTable);};
+  console.log(tables.length)
 
-//   res.json(newCharacter);
+  res.json(newTable);
+});
+
+// app.post("/api/waitlist", (req, res) => {
+
+//   const newTable = req.body;
+
+//   newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
+
+//   console.log(newTable);
+
+//   waitList.push(newTable);
+
+//   res.json(newTable);
 // });
 
 
