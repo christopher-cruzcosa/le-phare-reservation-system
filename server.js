@@ -7,7 +7,7 @@ const path = require("path");
 const app = express();
 const PORT =  process.env.PORT || 3001;
 
-var tables= [];
+var tables= [{},{},{},{}];
 var waitList = [];
 
 // Sets up the Express app to handle data parsing
@@ -79,7 +79,7 @@ app.get("/api/waitlist", (req, res) => {
 // });
 
 // Create New Characters - takes in JSON input
-app.post("/tables", (req, res) => {
+app.post("/api/tables", (req, res) => {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
   const newTable = req.body;
@@ -90,7 +90,7 @@ app.post("/tables", (req, res) => {
 
   console.log(newTable);
 
-  if (tables.length > 5) {
+  if (tables.length >= 5) {
     waitList.push(newTable);
   } else
   {tables.push(newTable);};
